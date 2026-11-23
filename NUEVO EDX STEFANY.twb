@@ -1,0 +1,1896 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20242.24.0613.1930                               -->
+<workbook locale='es_EC' original-version='18.1' source-build='2024.2.0 (20242.24.0613.1930)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)+ (OID_DB)' inline='true' name='federated.13qdvt71jo6zb01gyxffq1eb5tn7' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='10.136.0.1' name='netezza.1qa7a660bw1k4k1h6hf590a48ly8'>
+            <connection class='netezza' dbname='OID_DB' odbc-connect-string-extras='' odbc-native-protocol='' one-time-sql='' port='5480' server='10.136.0.1' sslmode='' username='SCORTEZN' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation join='left' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[SAC_RENUNCIA_EDX+].[IDENTFICACION]' />
+              <expression op='[LISTA PRIVACIDAD].[IDENTIFICACION]' />
+            </expression>
+          </clause>
+          <relation join='left' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='RIGHT(TRIM(STR([SAC_RENUNCIA_EDX+].[SUBSCRIBER_ID])), 8)' />
+                <expression op='RIGHT(TRIM(STR([INVENTARIO MÓVIL].[ID_SERVICIO])), 8)' />
+              </expression>
+            </clause>
+            <relation all='true' name='SAC_RENUNCIA_EDX+' type='union'>
+              <relation connection='netezza.1qa7a660bw1k4k1h6hf590a48ly8' name='SAC_RENUNCIA_EDX' table='[DLK].[SAC_RENUNCIA_EDX]' type='table' />
+            </relation>
+            <relation connection='netezza.1qa7a660bw1k4k1h6hf590a48ly8' name='INVENTARIO MÓVIL' type='text'>select ID_SERVICIO, ID_CICLO, DESCRIPCION_CICLO&#13;
+FROM OID_DB.OID_INVENTARIO_MOVIL&#13;
+WHERE FECHA_PROCESO=&apos;20260930&apos;</relation>
+          </relation>
+          <relation connection='netezza.1qa7a660bw1k4k1h6hf590a48ly8' name='LISTA PRIVACIDAD' type='text'>SELECT &#13;
+    Subscriber_Id,&#13;
+    LISTA_PRIVACIDAD,&#13;
+    ESTADO,&#13;
+    IDENTIFICACION&#13;
+FROM OID_DB.DLK.NO_CONTACTABLES</relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation join='left' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[SAC_RENUNCIA_EDX+].[IDENTFICACION]' />
+              <expression op='[LISTA PRIVACIDAD].[IDENTIFICACION]' />
+            </expression>
+          </clause>
+          <relation join='left' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='RIGHT(TRIM(STR([SAC_RENUNCIA_EDX+].[SUBSCRIBER_ID])), 8)' />
+                <expression op='RIGHT(TRIM(STR([INVENTARIO MÓVIL].[ID_SERVICIO])), 8)' />
+              </expression>
+            </clause>
+            <relation all='true' name='SAC_RENUNCIA_EDX+' type='union'>
+              <relation connection='netezza.1qa7a660bw1k4k1h6hf590a48ly8' name='SAC_RENUNCIA_EDX' table='[DLK].[SAC_RENUNCIA_EDX]' type='table' />
+            </relation>
+            <relation connection='netezza.1qa7a660bw1k4k1h6hf590a48ly8' name='INVENTARIO MÓVIL' type='text'>select ID_SERVICIO, ID_CICLO, DESCRIPCION_CICLO&#13;
+FROM OID_DB.OID_INVENTARIO_MOVIL&#13;
+WHERE FECHA_PROCESO=&apos;20260930&apos;</relation>
+          </relation>
+          <relation connection='netezza.1qa7a660bw1k4k1h6hf590a48ly8' name='LISTA PRIVACIDAD' type='text'>SELECT &#13;
+    Subscriber_Id,&#13;
+    LISTA_PRIVACIDAD,&#13;
+    ESTADO,&#13;
+    IDENTIFICACION&#13;
+FROM OID_DB.DLK.NO_CONTACTABLES</relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[AGENCIA]' value='[SAC_RENUNCIA_EDX+].[AGENCIA]' />
+          <map key='[CUENTA]' value='[SAC_RENUNCIA_EDX+].[CUENTA]' />
+          <map key='[DESCRIPCION_CICLO]' value='[INVENTARIO MÓVIL].[DESCRIPCION_CICLO]' />
+          <map key='[DESCRIPCION_FORMA_PAGO]' value='[SAC_RENUNCIA_EDX+].[DESCRIPCION_FORMA_PAGO]' />
+          <map key='[DESCRIPCION_PLAN]' value='[SAC_RENUNCIA_EDX+].[DESCRIPCION_PLAN]' />
+          <map key='[DIAS_PROGRAMACION]' value='[SAC_RENUNCIA_EDX+].[DIAS_PROGRAMACION]' />
+          <map key='[ESTADO]' value='[LISTA PRIVACIDAD].[ESTADO]' />
+          <map key='[ESTADO_TRANSACCION]' value='[SAC_RENUNCIA_EDX+].[ESTADO_TRANSACCION]' />
+          <map key='[ESTADO_TRANSACCION_PAYMENT]' value='[SAC_RENUNCIA_EDX+].[ESTADO_TRANSACCION_PAYMENT]' />
+          <map key='[EXONERACION]' value='[SAC_RENUNCIA_EDX+].[EXONERACION]' />
+          <map key='[FECHA_ALTA]' value='[SAC_RENUNCIA_EDX+].[FECHA_ALTA]' />
+          <map key='[FECHA_CANCELACION]' value='[SAC_RENUNCIA_EDX+].[FECHA_CANCELACION]' />
+          <map key='[FECHA_EJECUCION]' value='[SAC_RENUNCIA_EDX+].[FECHA_EJECUCION]' />
+          <map key='[FECHA_INGRESO]' value='[SAC_RENUNCIA_EDX+].[FECHA_INGRESO]' />
+          <map key='[IDENTFICACION]' value='[SAC_RENUNCIA_EDX+].[IDENTFICACION]' />
+          <map key='[IDENTIFICACION]' value='[LISTA PRIVACIDAD].[IDENTIFICACION]' />
+          <map key='[ID_CICLO (Consulta SQL personalizada)]' value='[INVENTARIO MÓVIL].[ID_CICLO]' />
+          <map key='[ID_CICLO]' value='[SAC_RENUNCIA_EDX+].[ID_CICLO]' />
+          <map key='[ID_SERVICIO]' value='[INVENTARIO MÓVIL].[ID_SERVICIO]' />
+          <map key='[ID_SUBPRODUCTO]' value='[SAC_RENUNCIA_EDX+].[ID_SUBPRODUCTO]' />
+          <map key='[LINEA_NEGOCIO]' value='[SAC_RENUNCIA_EDX+].[LINEA_NEGOCIO]' />
+          <map key='[LISTA_PRIVACIDAD]' value='[LISTA PRIVACIDAD].[LISTA_PRIVACIDAD]' />
+          <map key='[MOTIVO]' value='[SAC_RENUNCIA_EDX+].[MOTIVO]' />
+          <map key='[NOMBRE_COMPLETO]' value='[SAC_RENUNCIA_EDX+].[NOMBRE_COMPLETO]' />
+          <map key='[NO_TICKET_EDX]' value='[SAC_RENUNCIA_EDX+].[NO_TICKET_EDX]' />
+          <map key='[OFERTA]' value='[SAC_RENUNCIA_EDX+].[OFERTA]' />
+          <map key='[REGION]' value='[SAC_RENUNCIA_EDX+].[REGION]' />
+          <map key='[SUBSCRIBER_ID (Consulta SQL personalizada)]' value='[LISTA PRIVACIDAD].[SUBSCRIBER_ID]' />
+          <map key='[SUBSCRIBER_ID]' value='[SAC_RENUNCIA_EDX+].[SUBSCRIBER_ID]' />
+          <map key='[TARIFA_BASICA]' value='[SAC_RENUNCIA_EDX+].[TARIFA_BASICA]' />
+          <map key='[TIPO_CLIENTE]' value='[SAC_RENUNCIA_EDX+].[TIPO_CLIENTE]' />
+          <map key='[TIPO_PAGO]' value='[SAC_RENUNCIA_EDX+].[TIPO_PAGO]' />
+          <map key='[TIPO_RENUNCIA]' value='[SAC_RENUNCIA_EDX+].[TIPO_RENUNCIA]' />
+          <map key='[Table Name]' value='[SAC_RENUNCIA_EDX+].[Table Name]' />
+          <map key='[USUARIO_ELIMINA]' value='[SAC_RENUNCIA_EDX+].[USUARIO_ELIMINA]' />
+          <map key='[USUARIO_REGISTRO]' value='[SAC_RENUNCIA_EDX+].[USUARIO_REGISTRO]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>AGENCIA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[AGENCIA]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>AGENCIA</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>200</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OFERTA</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[OFERTA]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>OFERTA</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_NUMERIC&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID_CICLO</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ID_CICLO]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>ID_CICLO</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CUENTA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[CUENTA]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>CUENTA</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>130</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DESCRIPCION_PLAN</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DESCRIPCION_PLAN]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>DESCRIPCION_PLAN</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>130</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FECHA_CANCELACION</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[FECHA_CANCELACION]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>FECHA_CANCELACION</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIMESTAMP&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIMESTAMP&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FECHA_ALTA</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[FECHA_ALTA]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>FECHA_ALTA</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIMESTAMP&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIMESTAMP&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FECHA_EJECUCION</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[FECHA_EJECUCION]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>FECHA_EJECUCION</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIMESTAMP&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIMESTAMP&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FECHA_INGRESO</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[FECHA_INGRESO]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>FECHA_INGRESO</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIMESTAMP&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIMESTAMP&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DESCRIPCION_FORMA_PAGO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DESCRIPCION_FORMA_PAGO]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>DESCRIPCION_FORMA_PAGO</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>60</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IDENTFICACION</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[IDENTFICACION]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>IDENTFICACION</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>40</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NOMBRE_COMPLETO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[NOMBRE_COMPLETO]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>NOMBRE_COMPLETO</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>800</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>REGION</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[REGION]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>REGION</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>60</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SUBSCRIBER_ID</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[SUBSCRIBER_ID]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>SUBSCRIBER_ID</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>32</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TARIFA_BASICA</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[TARIFA_BASICA]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>TARIFA_BASICA</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <scale>2</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_NUMERIC&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TIPO_CLIENTE</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[TIPO_CLIENTE]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>TIPO_CLIENTE</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>60</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID_SUBPRODUCTO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[ID_SUBPRODUCTO]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>ID_SUBPRODUCTO</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>60</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TIPO_RENUNCIA</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[TIPO_RENUNCIA]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>TIPO_RENUNCIA</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ESTADO_TRANSACCION</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ESTADO_TRANSACCION]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>ESTADO_TRANSACCION</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>22</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ESTADO_TRANSACCION_PAYMENT</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ESTADO_TRANSACCION_PAYMENT]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>ESTADO_TRANSACCION_PAYMENT</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>22</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DIAS_PROGRAMACION</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[DIAS_PROGRAMACION]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>DIAS_PROGRAMACION</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_NUMERIC&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NO_TICKET_EDX</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[NO_TICKET_EDX]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>NO_TICKET_EDX</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>32</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>USUARIO_ELIMINA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[USUARIO_ELIMINA]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>USUARIO_ELIMINA</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>40</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>USUARIO_REGISTRO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[USUARIO_REGISTRO]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>USUARIO_REGISTRO</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>40</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EXONERACION</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[EXONERACION]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>EXONERACION</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TIPO_PAGO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[TIPO_PAGO]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>TIPO_PAGO</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>60</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MOTIVO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MOTIVO]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>MOTIVO</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2000</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LINEA_NEGOCIO</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[LINEA_NEGOCIO]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>LINEA_NEGOCIO</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>5</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Table Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Table Name]</local-name>
+            <parent-name>[SAC_RENUNCIA_EDX+]</parent-name>
+            <remote-alias>Table Name</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_REC' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID_SERVICIO</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ID_SERVICIO]</local-name>
+            <parent-name>[INVENTARIO MÓVIL]</parent-name>
+            <remote-alias>ID_SERVICIO</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID_CICLO</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ID_CICLO (Consulta SQL personalizada)]</local-name>
+            <parent-name>[INVENTARIO MÓVIL]</parent-name>
+            <remote-alias>ID_CICLO</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>6</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DESCRIPCION_CICLO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DESCRIPCION_CICLO]</local-name>
+            <parent-name>[INVENTARIO MÓVIL]</parent-name>
+            <remote-alias>DESCRIPCION_CICLO</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SUBSCRIBER_ID</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[SUBSCRIBER_ID (Consulta SQL personalizada)]</local-name>
+            <parent-name>[LISTA PRIVACIDAD]</parent-name>
+            <remote-alias>SUBSCRIBER_ID</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LISTA_PRIVACIDAD</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[LISTA_PRIVACIDAD]</local-name>
+            <parent-name>[LISTA PRIVACIDAD]</parent-name>
+            <remote-alias>LISTA_PRIVACIDAD</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ESTADO</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ESTADO]</local-name>
+            <parent-name>[LISTA PRIVACIDAD]</parent-name>
+            <remote-alias>ESTADO</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>8</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IDENTIFICACION</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[IDENTIFICACION]</local-name>
+            <parent-name>[LISTA PRIVACIDAD]</parent-name>
+            <remote-alias>IDENTIFICACION</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_WVARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_WCHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Agencia' datatype='string' name='[AGENCIA]' role='dimension' type='nominal' />
+      <column caption='Cuenta' datatype='string' name='[CUENTA]' role='dimension' type='nominal' />
+      <column caption='CAL. FECHA IMPACTO' datatype='date' datatype-customized='true' name='[Calculation_-261490240421081085]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='DATE(&#13;&#10;IF UPPER(TRIM([TIPO_RENUNCIA])) = &quot;CAMBIO A PREPAGO&quot; &#13;&#10;THEN DATEADD(&apos;day&apos;, 31, [FECHA_EJECUCION])&#13;&#10;ELSEIF UPPER(TRIM([TIPO_RENUNCIA])) = &quot;RENUNCIA TOTAL&quot; &#13;&#10;THEN [FECHA_EJECUCION]&#13;&#10;END&#13;&#10;)' />
+      </column>
+      <column caption='CAL. MES IMPACTO' datatype='string' datatype-customized='true' name='[Calculation_-261490240425865214]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='DATENAME(&apos;month&apos;,&#13;&#10;    IF UPPER(TRIM([TIPO_RENUNCIA])) = &quot;CAMBIO A PREPAGO&quot; &#13;&#10;    THEN DATEADD(&apos;day&apos;, 31, [FECHA_EJECUCION])&#13;&#10;    ELSEIF UPPER(TRIM([TIPO_RENUNCIA])) = &quot;RENUNCIA TOTAL&quot; &#13;&#10;    THEN [FECHA_EJECUCION]&#13;&#10;    END&#13;&#10;)&#13;&#10;+ &quot; &quot; +&#13;&#10;STR(&#13;&#10;    YEAR(&#13;&#10;    IF UPPER(TRIM([TIPO_RENUNCIA])) = &quot;CAMBIO A PREPAGO&quot; &#13;&#10;    THEN DATEADD(&apos;day&apos;, 31, [FECHA_EJECUCION])&#13;&#10;    ELSEIF UPPER(TRIM([TIPO_RENUNCIA])) = &quot;RENUNCIA TOTAL&quot; &#13;&#10;    THEN [FECHA_EJECUCION]&#13;&#10;    END&#13;&#10;    )&#13;&#10;)' />
+      </column>
+      <column caption='CAL. DIAS PROG,' datatype='boolean' name='[Calculation_6187101475733786628]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[DIAS_PROGRAMACION]&gt;1' />
+      </column>
+      <column caption='CAL. OFERTA' datatype='boolean' name='[Calculation_6187101475734315014]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='NOT (CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;SMART&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;BAM&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;CONEXION 0&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;CONEXION DATOS&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;IDEAL RECARGAS&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;IOT&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;PLAN BANDA ANCHA MOVIL&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;CARSYNC&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;GPS&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;TABLET&quot;))' />
+      </column>
+      <column caption='FIXED' datatype='string' name='[Calculation_6187101475738202119]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [SUBSCRIBER_ID] = &quot;FIXED&quot; THEN NULL&#13;&#10;ELSE [SUBSCRIBER_ID]&#13;&#10;END' />
+      </column>
+      <column caption='CAL. IDENTIF,' datatype='string' name='[Calculation_6187101475743080458]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF LEN(STR([IDENTFICACION])) &lt;= 10&#13;&#10;AND NOT STARTSWITH(STR([IDENTFICACION]), &quot;SAC&quot;)&#13;&#10;AND NOT STARTSWITH(STR([IDENTFICACION]), &quot;TIC&quot;)&#13;&#10;THEN [IDENTFICACION]&#13;&#10;ELSE NULL&#13;&#10;END' />
+      </column>
+      <column caption='DESCRIPCION_CICLO INV.' datatype='string' name='[DESCRIPCION_CICLO]' role='dimension' type='nominal' />
+      <column caption='Descripcion Forma Pago' datatype='string' name='[DESCRIPCION_FORMA_PAGO]' role='dimension' type='nominal' />
+      <column caption='Descripcion Plan' datatype='string' name='[DESCRIPCION_PLAN]' role='dimension' type='nominal' />
+      <column caption='Dias Programacion' datatype='integer' name='[DIAS_PROGRAMACION]' role='measure' type='quantitative' />
+      <column datatype='string' hidden='true' name='[ESTADO]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Estado Transaccion' datatype='string' name='[ESTADO_TRANSACCION]' role='dimension' type='nominal' />
+      <column caption='Estado Transaccion Payment' datatype='string' name='[ESTADO_TRANSACCION_PAYMENT]' role='dimension' type='nominal' />
+      <column caption='Exoneracion' datatype='string' hidden='true' name='[EXONERACION]' role='dimension' type='nominal' />
+      <column caption='Fecha Alta' datatype='datetime' hidden='true' name='[FECHA_ALTA]' role='dimension' type='ordinal' />
+      <column caption='Fecha Cancelacion' datatype='datetime' datatype-customized='true' name='[FECHA_CANCELACION]' role='dimension' type='ordinal' />
+      <column caption='Fecha Inactivación' datatype='date' datatype-customized='true' name='[FECHA_EJECUCION]' role='dimension' type='ordinal' />
+      <column caption='Fecha Programacion' datatype='datetime' datatype-customized='true' name='[FECHA_INGRESO]' role='dimension' type='ordinal' />
+      <column caption='Identficacion' datatype='string' name='[IDENTFICACION]' role='dimension' type='nominal' />
+      <column caption='ID_CICLO INVENTARIO' datatype='string' name='[ID_CICLO (Consulta SQL personalizada)]' role='dimension' type='nominal' />
+      <column caption='Id Ciclo' datatype='string' hidden='true' name='[ID_CICLO]' role='dimension' type='nominal' />
+      <column datatype='string' hidden='true' name='[ID_SERVICIO]' role='dimension' type='nominal' />
+      <column caption='Id Subproducto' datatype='string' name='[ID_SUBPRODUCTO]' role='dimension' type='nominal' />
+      <column caption='Linea Negocio' datatype='string' name='[LINEA_NEGOCIO]' role='dimension' type='nominal' />
+      <column caption='Motivo' datatype='string' name='[MOTIVO]' role='dimension' type='nominal' />
+      <column caption='Nombre Completo' datatype='string' name='[NOMBRE_COMPLETO]' role='dimension' type='nominal' />
+      <column caption='No Ticket Edx' datatype='string' name='[NO_TICKET_EDX]' role='dimension' type='nominal' />
+      <column caption='Oferta' datatype='integer' name='[OFERTA]' role='measure' type='quantitative' />
+      <column caption='Region' datatype='string' name='[REGION]' role='dimension' type='nominal' />
+      <column caption='SUBSCRIBER_ID_PRIVA.' datatype='string' hidden='true' name='[SUBSCRIBER_ID (Consulta SQL personalizada)]' role='dimension' type='nominal' />
+      <column caption='Subscriber Id' datatype='string' name='[SUBSCRIBER_ID]' role='dimension' type='nominal' />
+      <column caption='Tarifa Basica' datatype='real' name='[TARIFA_BASICA]' role='measure' type='quantitative' />
+      <column caption='Tipo Cliente' datatype='string' name='[TIPO_CLIENTE]' role='dimension' type='nominal' />
+      <column caption='Tipo Pago' datatype='string' name='[TIPO_PAGO]' role='dimension' type='nominal' />
+      <column caption='Tipo Renuncia' datatype='string' name='[TIPO_RENUNCIA]' role='dimension' type='nominal' />
+      <column caption='Usuario Elimina' datatype='string' name='[USUARIO_ELIMINA]' role='dimension' type='nominal' />
+      <column caption='Usuario Registro' datatype='string' name='[USUARIO_REGISTRO]' role='dimension' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='SAC_RENUNCIA_EDX' datatype='table' name='[__tableau_internal_object_id__].[SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5]' role='measure' type='quantitative' />
+      <drill-paths>
+        <drill-path name='PROVINCIA, CIUDAD' />
+      </drill-paths>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-hidden-fields='true' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;EC&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='AGENCIA' />
+        <field-sort-custom-order field='OFERTA' />
+        <field-sort-custom-order field='ID_CICLO' />
+        <field-sort-custom-order field='CUENTA' />
+        <field-sort-custom-order field='DESCRIPCION_PLAN' />
+        <field-sort-custom-order field='FECHA_CANCELACION' />
+        <field-sort-custom-order field='FECHA_ALTA' />
+        <field-sort-custom-order field='FECHA_EJECUCION' />
+        <field-sort-custom-order field='FECHA_INGRESO' />
+        <field-sort-custom-order field='DESCRIPCION_FORMA_PAGO' />
+        <field-sort-custom-order field='IDENTFICACION' />
+        <field-sort-custom-order field='Calculation_6187101475743080458' />
+        <field-sort-custom-order field='NOMBRE_COMPLETO' />
+        <field-sort-custom-order field='REGION' />
+        <field-sort-custom-order field='SUBSCRIBER_ID' />
+        <field-sort-custom-order field='TARIFA_BASICA' />
+        <field-sort-custom-order field='TIPO_CLIENTE' />
+        <field-sort-custom-order field='ID_SUBPRODUCTO' />
+        <field-sort-custom-order field='TIPO_RENUNCIA' />
+        <field-sort-custom-order field='ESTADO_TRANSACCION' />
+        <field-sort-custom-order field='ESTADO_TRANSACCION_PAYMENT' />
+        <field-sort-custom-order field='DIAS_PROGRAMACION' />
+        <field-sort-custom-order field='NO_TICKET_EDX' />
+        <field-sort-custom-order field='USUARIO_ELIMINA' />
+        <field-sort-custom-order field='USUARIO_REGISTRO' />
+        <field-sort-custom-order field='EXONERACION' />
+        <field-sort-custom-order field='TIPO_PAGO' />
+        <field-sort-custom-order field='MOTIVO' />
+        <field-sort-custom-order field='LINEA_NEGOCIO' />
+        <field-sort-custom-order field='FECHA_INICIO (NO_CONTACTABLES)' />
+        <field-sort-custom-order field='SUBSCRIBER_ID (NO_CONTACTABLES)' />
+        <field-sort-custom-order field='ID_IDENTIFICACION (NO_CONTACTABLES)' />
+        <field-sort-custom-order field='IDENTIFICACION (NO_CONTACTABLES)' />
+        <field-sort-custom-order field='TIPO' />
+        <field-sort-custom-order field='LISTA_PRIVACIDAD (NO_CONTACTABLES)' />
+        <field-sort-custom-order field='ESTADO (NO_CONTACTABLES)' />
+        <field-sort-custom-order field='ID_SERVICIO' />
+        <field-sort-custom-order field='IDENTIFICACION' />
+        <field-sort-custom-order field='DESCRIPCION_PLAN (Consulta SQL personalizada)' />
+        <field-sort-custom-order field='NOMBRE_COMPLETO (Consulta SQL personalizada)' />
+        <field-sort-custom-order field='DESCRIPCION_STATUS' />
+        <field-sort-custom-order field='FECHA_PROCESO' />
+        <field-sort-custom-order field='ID_CICLO (Consulta SQL personalizada)' />
+        <field-sort-custom-order field='DESCRIPCION_CICLO' />
+        <field-sort-custom-order field='DESCRIPCION_FORMA_PAGO (Consulta SQL personalizada)' />
+        <field-sort-custom-order field='STATUS' />
+        <field-sort-custom-order field='DEUDA_ACTUAL' />
+        <field-sort-custom-order field='VAL_PEND_ADENDUM' />
+        <field-sort-custom-order field='TOTAL_VALOR_EQUIPO_FINAN' />
+        <field-sort-custom-order field='PROVINCIA_TRF' />
+        <field-sort-custom-order field='CIUDAD_TRF' />
+        <field-sort-custom-order field='Calculation_6187101475733786628' />
+        <field-sort-custom-order field='Calculation_6187101475734315014' />
+        <field-sort-custom-order field='Geometry (generated)' />
+        <field-sort-custom-order field='Latitude (generated)' />
+        <field-sort-custom-order field='Longitude (generated)' />
+        <field-sort-custom-order field='Calculation_6187101475738202119' />
+        <field-sort-custom-order field=':Measure Names' />
+        <field-sort-custom-order field='Multiple Values' />
+      </field-sort-info>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='SAC_RENUNCIA_EDX' id='SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)_D7903D870F5748CCAA1109BE63D7FAA5'>
+            <properties context=''>
+              <relation join='left' type='join'>
+                <clause type='join'>
+                  <expression op='='>
+                    <expression op='[SAC_RENUNCIA_EDX+].[IDENTFICACION]' />
+                    <expression op='[LISTA PRIVACIDAD].[IDENTIFICACION]' />
+                  </expression>
+                </clause>
+                <relation join='left' type='join'>
+                  <clause type='join'>
+                    <expression op='='>
+                      <expression op='RIGHT(TRIM(STR([SAC_RENUNCIA_EDX+].[SUBSCRIBER_ID])), 8)' />
+                      <expression op='RIGHT(TRIM(STR([INVENTARIO MÓVIL].[ID_SERVICIO])), 8)' />
+                    </expression>
+                  </clause>
+                  <relation all='true' name='SAC_RENUNCIA_EDX+' type='union'>
+                    <relation connection='netezza.1qa7a660bw1k4k1h6hf590a48ly8' name='SAC_RENUNCIA_EDX' table='[DLK].[SAC_RENUNCIA_EDX]' type='table' />
+                  </relation>
+                  <relation connection='netezza.1qa7a660bw1k4k1h6hf590a48ly8' name='INVENTARIO MÓVIL' type='text'>select ID_SERVICIO, ID_CICLO, DESCRIPCION_CICLO&#13;
+FROM OID_DB.OID_INVENTARIO_MOVIL&#13;
+WHERE FECHA_PROCESO=&apos;20260930&apos;</relation>
+                </relation>
+                <relation connection='netezza.1qa7a660bw1k4k1h6hf590a48ly8' name='LISTA PRIVACIDAD' type='text'>SELECT &#13;
+    Subscriber_Id,&#13;
+    LISTA_PRIVACIDAD,&#13;
+    ESTADO,&#13;
+    IDENTIFICACION&#13;
+FROM OID_DB.DLK.NO_CONTACTABLES</relation>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='CORREGIDO'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)+ (OID_DB)' name='federated.13qdvt71jo6zb01gyxffq1eb5tn7' />
+          </datasources>
+          <datasource-dependencies datasource='federated.13qdvt71jo6zb01gyxffq1eb5tn7'>
+            <column caption='CAL. DIAS PROG,' datatype='boolean' name='[Calculation_6187101475733786628]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[DIAS_PROGRAMACION]&gt;1' />
+            </column>
+            <column caption='CAL. OFERTA' datatype='boolean' name='[Calculation_6187101475734315014]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='NOT (CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;SMART&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;BAM&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;CONEXION 0&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;CONEXION DATOS&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;IDEAL RECARGAS&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;IOT&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;PLAN BANDA ANCHA MOVIL&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;CARSYNC&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;GPS&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;TABLET&quot;))' />
+            </column>
+            <column caption='FIXED' datatype='string' name='[Calculation_6187101475738202119]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [SUBSCRIBER_ID] = &quot;FIXED&quot; THEN NULL&#13;&#10;ELSE [SUBSCRIBER_ID]&#13;&#10;END' />
+            </column>
+            <column caption='CAL. IDENTIF,' datatype='string' name='[Calculation_6187101475743080458]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF LEN(STR([IDENTFICACION])) &lt;= 10&#13;&#10;AND NOT STARTSWITH(STR([IDENTFICACION]), &quot;SAC&quot;)&#13;&#10;AND NOT STARTSWITH(STR([IDENTFICACION]), &quot;TIC&quot;)&#13;&#10;THEN [IDENTFICACION]&#13;&#10;ELSE NULL&#13;&#10;END' />
+            </column>
+            <column caption='Descripcion Plan' datatype='string' name='[DESCRIPCION_PLAN]' role='dimension' type='nominal' />
+            <column caption='Dias Programacion' datatype='integer' name='[DIAS_PROGRAMACION]' role='measure' type='quantitative' />
+            <column caption='Estado Transaccion' datatype='string' name='[ESTADO_TRANSACCION]' role='dimension' type='nominal' />
+            <column caption='Fecha Programacion' datatype='datetime' datatype-customized='true' name='[FECHA_INGRESO]' role='dimension' type='ordinal' />
+            <column caption='Identficacion' datatype='string' name='[IDENTFICACION]' role='dimension' type='nominal' />
+            <column caption='Id Subproducto' datatype='string' name='[ID_SUBPRODUCTO]' role='dimension' type='nominal' />
+            <column datatype='string' name='[LISTA_PRIVACIDAD]' role='dimension' type='nominal' />
+            <column caption='Subscriber Id' datatype='string' name='[SUBSCRIBER_ID]' role='dimension' type='nominal' />
+            <column-instance column='[SUBSCRIBER_ID]' derivation='Count' name='[cnt:SUBSCRIBER_ID:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[FECHA_INGRESO]' derivation='Day' name='[dy:FECHA_INGRESO:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[FECHA_INGRESO]' derivation='Month' name='[mn:FECHA_INGRESO:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_6187101475733786628]' derivation='None' name='[none:Calculation_6187101475733786628:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_6187101475734315014]' derivation='None' name='[none:Calculation_6187101475734315014:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_6187101475738202119]' derivation='None' name='[none:Calculation_6187101475738202119:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_6187101475743080458]' derivation='None' name='[none:Calculation_6187101475743080458:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ESTADO_TRANSACCION]' derivation='None' name='[none:ESTADO_TRANSACCION:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ID_SUBPRODUCTO]' derivation='None' name='[none:ID_SUBPRODUCTO:nk]' pivot='key' type='nominal' />
+            <column-instance column='[LISTA_PRIVACIDAD]' derivation='None' name='[none:LISTA_PRIVACIDAD:nk]' pivot='key' type='nominal' />
+            <column-instance column='[FECHA_INGRESO]' derivation='Year' name='[yr:FECHA_INGRESO:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[dy:FECHA_INGRESO:ok]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[dy:FECHA_INGRESO:ok]' />
+              <groupfilter function='member' level='[dy:FECHA_INGRESO:ok]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[mn:FECHA_INGRESO:ok]'>
+            <groupfilter function='member' level='[mn:FECHA_INGRESO:ok]' member='6' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475733786628:nk]'>
+            <groupfilter function='member' level='[none:Calculation_6187101475733786628:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475734315014:nk]'>
+            <groupfilter function='member' level='[none:Calculation_6187101475734315014:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475738202119:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Calculation_6187101475738202119:nk]' />
+              <groupfilter function='member' level='[none:Calculation_6187101475738202119:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475743080458:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Calculation_6187101475743080458:nk]' />
+              <groupfilter function='member' level='[none:Calculation_6187101475743080458:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:ESTADO_TRANSACCION:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:ESTADO_TRANSACCION:nk]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:ESTADO_TRANSACCION:nk]' member='&quot;Cancelada&quot;' />
+                <groupfilter function='member' level='[none:ESTADO_TRANSACCION:nk]' member='&quot;Estado no identificado&quot;' />
+                <groupfilter function='member' level='[none:ESTADO_TRANSACCION:nk]' member='%null%' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:ID_SUBPRODUCTO:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:ID_SUBPRODUCTO:nk]' member='&quot;AUT&quot;' />
+              <groupfilter function='member' level='[none:ID_SUBPRODUCTO:nk]' member='&quot;TAR&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:LISTA_PRIVACIDAD:nk]'>
+            <groupfilter function='member' level='[none:LISTA_PRIVACIDAD:nk]' member='%null%' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[yr:FECHA_INGRESO:ok]'>
+            <groupfilter function='member' level='[yr:FECHA_INGRESO:ok]' member='2026' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[yr:FECHA_INGRESO:ok]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[mn:FECHA_INGRESO:ok]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[dy:FECHA_INGRESO:ok]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:ESTADO_TRANSACCION:nk]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475733786628:nk]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475734315014:nk]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475738202119:nk]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475743080458:nk]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:LISTA_PRIVACIDAD:nk]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:ID_SUBPRODUCTO:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[cnt:SUBSCRIBER_ID:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows total='true'>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:ESTADO_TRANSACCION:nk]</rows>
+        <cols total='true'>([federated.13qdvt71jo6zb01gyxffq1eb5tn7].[yr:FECHA_INGRESO:ok] / ([federated.13qdvt71jo6zb01gyxffq1eb5tn7].[mn:FECHA_INGRESO:ok] / [federated.13qdvt71jo6zb01gyxffq1eb5tn7].[dy:FECHA_INGRESO:ok]))</cols>
+      </table>
+      <simple-id uuid='{3424E704-9C29-432A-923B-ECD2D04D2BBA}' />
+    </worksheet>
+    <worksheet name='DESCARGAR'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)+ (OID_DB)' name='federated.13qdvt71jo6zb01gyxffq1eb5tn7' />
+          </datasources>
+          <datasource-dependencies datasource='federated.13qdvt71jo6zb01gyxffq1eb5tn7'>
+            <column caption='CAL. DIAS PROG,' datatype='boolean' name='[Calculation_6187101475733786628]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[DIAS_PROGRAMACION]&gt;1' />
+            </column>
+            <column caption='CAL. OFERTA' datatype='boolean' name='[Calculation_6187101475734315014]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='NOT (CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;SMART&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;BAM&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;CONEXION 0&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;CONEXION DATOS&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;IDEAL RECARGAS&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;IOT&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;PLAN BANDA ANCHA MOVIL&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;CARSYNC&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;GPS&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;TABLET&quot;))' />
+            </column>
+            <column caption='FIXED' datatype='string' name='[Calculation_6187101475738202119]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [SUBSCRIBER_ID] = &quot;FIXED&quot; THEN NULL&#13;&#10;ELSE [SUBSCRIBER_ID]&#13;&#10;END' />
+            </column>
+            <column caption='CAL. IDENTIF,' datatype='string' name='[Calculation_6187101475743080458]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF LEN(STR([IDENTFICACION])) &lt;= 10&#13;&#10;AND NOT STARTSWITH(STR([IDENTFICACION]), &quot;SAC&quot;)&#13;&#10;AND NOT STARTSWITH(STR([IDENTFICACION]), &quot;TIC&quot;)&#13;&#10;THEN [IDENTFICACION]&#13;&#10;ELSE NULL&#13;&#10;END' />
+            </column>
+            <column caption='Descripcion Plan' datatype='string' name='[DESCRIPCION_PLAN]' role='dimension' type='nominal' />
+            <column caption='Dias Programacion' datatype='integer' name='[DIAS_PROGRAMACION]' role='measure' type='quantitative' />
+            <column caption='Estado Transaccion' datatype='string' name='[ESTADO_TRANSACCION]' role='dimension' type='nominal' />
+            <column caption='Fecha Programacion' datatype='datetime' datatype-customized='true' name='[FECHA_INGRESO]' role='dimension' type='ordinal' />
+            <column caption='Identficacion' datatype='string' name='[IDENTFICACION]' role='dimension' type='nominal' />
+            <column datatype='string' name='[LISTA_PRIVACIDAD]' role='dimension' type='nominal' />
+            <column caption='Subscriber Id' datatype='string' name='[SUBSCRIBER_ID]' role='dimension' type='nominal' />
+            <column-instance column='[SUBSCRIBER_ID]' derivation='Count' name='[cnt:SUBSCRIBER_ID:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[FECHA_INGRESO]' derivation='Day' name='[dy:FECHA_INGRESO:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[FECHA_INGRESO]' derivation='Month' name='[mn:FECHA_INGRESO:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_6187101475733786628]' derivation='None' name='[none:Calculation_6187101475733786628:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_6187101475734315014]' derivation='None' name='[none:Calculation_6187101475734315014:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_6187101475738202119]' derivation='None' name='[none:Calculation_6187101475738202119:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_6187101475743080458]' derivation='None' name='[none:Calculation_6187101475743080458:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ESTADO_TRANSACCION]' derivation='None' name='[none:ESTADO_TRANSACCION:nk]' pivot='key' type='nominal' />
+            <column-instance column='[LISTA_PRIVACIDAD]' derivation='None' name='[none:LISTA_PRIVACIDAD:nk]' pivot='key' type='nominal' />
+            <column-instance column='[FECHA_INGRESO]' derivation='Year' name='[yr:FECHA_INGRESO:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[dy:FECHA_INGRESO:ok]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[dy:FECHA_INGRESO:ok]' />
+              <groupfilter function='member' level='[dy:FECHA_INGRESO:ok]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[mn:FECHA_INGRESO:ok]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[mn:FECHA_INGRESO:ok]' member='10' />
+              <groupfilter function='member' level='[mn:FECHA_INGRESO:ok]' member='11' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475733786628:nk]'>
+            <groupfilter function='member' level='[none:Calculation_6187101475733786628:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475734315014:nk]'>
+            <groupfilter function='member' level='[none:Calculation_6187101475734315014:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475738202119:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Calculation_6187101475738202119:nk]' />
+              <groupfilter function='member' level='[none:Calculation_6187101475738202119:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475743080458:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Calculation_6187101475743080458:nk]' />
+              <groupfilter function='member' level='[none:Calculation_6187101475743080458:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:ESTADO_TRANSACCION:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:ESTADO_TRANSACCION:nk]' />
+              <groupfilter function='member' level='[none:ESTADO_TRANSACCION:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:LISTA_PRIVACIDAD:nk]'>
+            <groupfilter function='member' level='[none:LISTA_PRIVACIDAD:nk]' member='%null%' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[yr:FECHA_INGRESO:ok]'>
+            <groupfilter function='member' level='[yr:FECHA_INGRESO:ok]' member='2026' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[yr:FECHA_INGRESO:ok]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[mn:FECHA_INGRESO:ok]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[dy:FECHA_INGRESO:ok]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:ESTADO_TRANSACCION:nk]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475733786628:nk]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475734315014:nk]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475738202119:nk]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475743080458:nk]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:LISTA_PRIVACIDAD:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:ESTADO_TRANSACCION:nk]' value='196' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[cnt:SUBSCRIBER_ID:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows total='true'>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:ESTADO_TRANSACCION:nk]</rows>
+        <cols total='true'>([federated.13qdvt71jo6zb01gyxffq1eb5tn7].[yr:FECHA_INGRESO:ok] / ([federated.13qdvt71jo6zb01gyxffq1eb5tn7].[mn:FECHA_INGRESO:ok] / [federated.13qdvt71jo6zb01gyxffq1eb5tn7].[dy:FECHA_INGRESO:ok]))</cols>
+      </table>
+      <simple-id uuid='{6F562396-8E85-45AF-B197-629DC595767E}' />
+    </worksheet>
+    <worksheet name='PRINCIPAL'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)+ (OID_DB)' name='federated.13qdvt71jo6zb01gyxffq1eb5tn7' />
+          </datasources>
+          <datasource-dependencies datasource='federated.13qdvt71jo6zb01gyxffq1eb5tn7'>
+            <column caption='FIXED' datatype='string' name='[Calculation_6187101475738202119]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [SUBSCRIBER_ID] = &quot;FIXED&quot; THEN NULL&#13;&#10;ELSE [SUBSCRIBER_ID]&#13;&#10;END' />
+            </column>
+            <column caption='Estado Transaccion' datatype='string' name='[ESTADO_TRANSACCION]' role='dimension' type='nominal' />
+            <column caption='Fecha Programacion' datatype='datetime' datatype-customized='true' name='[FECHA_INGRESO]' role='dimension' type='ordinal' />
+            <column caption='Subscriber Id' datatype='string' name='[SUBSCRIBER_ID]' role='dimension' type='nominal' />
+            <column-instance column='[SUBSCRIBER_ID]' derivation='Count' name='[cnt:SUBSCRIBER_ID:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[FECHA_INGRESO]' derivation='Day' name='[dy:FECHA_INGRESO:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[FECHA_INGRESO]' derivation='Month' name='[mn:FECHA_INGRESO:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_6187101475738202119]' derivation='None' name='[none:Calculation_6187101475738202119:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ESTADO_TRANSACCION]' derivation='None' name='[none:ESTADO_TRANSACCION:nk]' pivot='key' type='nominal' />
+            <column-instance column='[FECHA_INGRESO]' derivation='Year' name='[yr:FECHA_INGRESO:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[dy:FECHA_INGRESO:ok]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[dy:FECHA_INGRESO:ok]' />
+              <groupfilter function='member' level='[dy:FECHA_INGRESO:ok]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[mn:FECHA_INGRESO:ok]'>
+            <groupfilter function='member' level='[mn:FECHA_INGRESO:ok]' member='6' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475738202119:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Calculation_6187101475738202119:nk]' />
+              <groupfilter function='member' level='[none:Calculation_6187101475738202119:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[yr:FECHA_INGRESO:ok]'>
+            <groupfilter function='member' level='[yr:FECHA_INGRESO:ok]' member='2026' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[yr:FECHA_INGRESO:ok]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[mn:FECHA_INGRESO:ok]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[dy:FECHA_INGRESO:ok]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475738202119:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[cnt:SUBSCRIBER_ID:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows total='true'>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:ESTADO_TRANSACCION:nk]</rows>
+        <cols total='true'>([federated.13qdvt71jo6zb01gyxffq1eb5tn7].[yr:FECHA_INGRESO:ok] / ([federated.13qdvt71jo6zb01gyxffq1eb5tn7].[mn:FECHA_INGRESO:ok] / [federated.13qdvt71jo6zb01gyxffq1eb5tn7].[dy:FECHA_INGRESO:ok]))</cols>
+      </table>
+      <simple-id uuid='{5F2B3BCF-67D4-46C6-9797-17EA6E0B7FE9}' />
+    </worksheet>
+    <worksheet name='RENUNCIA'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='SAC_RENUNCIA_EDX (DLK.SAC_RENUNCIA_EDX)+ (OID_DB)' name='federated.13qdvt71jo6zb01gyxffq1eb5tn7' />
+          </datasources>
+          <datasource-dependencies datasource='federated.13qdvt71jo6zb01gyxffq1eb5tn7'>
+            <column caption='CAL. DIAS PROG,' datatype='boolean' name='[Calculation_6187101475733786628]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[DIAS_PROGRAMACION]&gt;1' />
+            </column>
+            <column caption='CAL. OFERTA' datatype='boolean' name='[Calculation_6187101475734315014]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='NOT (CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;SMART&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;BAM&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;CONEXION 0&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;CONEXION DATOS&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;IDEAL RECARGAS&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;IOT&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;PLAN BANDA ANCHA MOVIL&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;CARSYNC&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;GPS&quot;)&#13;&#10;OR&#13;&#10;CONTAINS(UPPER([DESCRIPCION_PLAN]), &quot;TABLET&quot;))' />
+            </column>
+            <column caption='FIXED' datatype='string' name='[Calculation_6187101475738202119]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [SUBSCRIBER_ID] = &quot;FIXED&quot; THEN NULL&#13;&#10;ELSE [SUBSCRIBER_ID]&#13;&#10;END' />
+            </column>
+            <column caption='CAL. IDENTIF,' datatype='string' name='[Calculation_6187101475743080458]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF LEN(STR([IDENTFICACION])) &lt;= 10&#13;&#10;AND NOT STARTSWITH(STR([IDENTFICACION]), &quot;SAC&quot;)&#13;&#10;AND NOT STARTSWITH(STR([IDENTFICACION]), &quot;TIC&quot;)&#13;&#10;THEN [IDENTFICACION]&#13;&#10;ELSE NULL&#13;&#10;END' />
+            </column>
+            <column caption='Descripcion Plan' datatype='string' name='[DESCRIPCION_PLAN]' role='dimension' type='nominal' />
+            <column caption='Dias Programacion' datatype='integer' name='[DIAS_PROGRAMACION]' role='measure' type='quantitative' />
+            <column caption='Estado Transaccion' datatype='string' name='[ESTADO_TRANSACCION]' role='dimension' type='nominal' />
+            <column caption='Fecha Programacion' datatype='datetime' datatype-customized='true' name='[FECHA_INGRESO]' role='dimension' type='ordinal' />
+            <column caption='Identficacion' datatype='string' name='[IDENTFICACION]' role='dimension' type='nominal' />
+            <column caption='Id Subproducto' datatype='string' name='[ID_SUBPRODUCTO]' role='dimension' type='nominal' />
+            <column datatype='string' name='[LISTA_PRIVACIDAD]' role='dimension' type='nominal' />
+            <column caption='Subscriber Id' datatype='string' name='[SUBSCRIBER_ID]' role='dimension' type='nominal' />
+            <column-instance column='[SUBSCRIBER_ID]' derivation='Count' name='[cnt:SUBSCRIBER_ID:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[FECHA_INGRESO]' derivation='Day' name='[dy:FECHA_INGRESO:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[FECHA_INGRESO]' derivation='Month' name='[mn:FECHA_INGRESO:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_6187101475733786628]' derivation='None' name='[none:Calculation_6187101475733786628:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_6187101475734315014]' derivation='None' name='[none:Calculation_6187101475734315014:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_6187101475738202119]' derivation='None' name='[none:Calculation_6187101475738202119:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_6187101475743080458]' derivation='None' name='[none:Calculation_6187101475743080458:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ESTADO_TRANSACCION]' derivation='None' name='[none:ESTADO_TRANSACCION:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ID_SUBPRODUCTO]' derivation='None' name='[none:ID_SUBPRODUCTO:nk]' pivot='key' type='nominal' />
+            <column-instance column='[LISTA_PRIVACIDAD]' derivation='None' name='[none:LISTA_PRIVACIDAD:nk]' pivot='key' type='nominal' />
+            <column-instance column='[FECHA_INGRESO]' derivation='Year' name='[yr:FECHA_INGRESO:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[dy:FECHA_INGRESO:ok]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[dy:FECHA_INGRESO:ok]' />
+              <groupfilter function='member' level='[dy:FECHA_INGRESO:ok]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[mn:FECHA_INGRESO:ok]'>
+            <groupfilter function='member' level='[mn:FECHA_INGRESO:ok]' member='6' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475733786628:nk]'>
+            <groupfilter function='member' level='[none:Calculation_6187101475733786628:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475734315014:nk]'>
+            <groupfilter function='member' level='[none:Calculation_6187101475734315014:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475738202119:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Calculation_6187101475738202119:nk]' />
+              <groupfilter function='member' level='[none:Calculation_6187101475738202119:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475743080458:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Calculation_6187101475743080458:nk]' />
+              <groupfilter function='member' level='[none:Calculation_6187101475743080458:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:ESTADO_TRANSACCION:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:ESTADO_TRANSACCION:nk]' member='&quot;Enviado a Huawei&quot;' />
+              <groupfilter function='member' level='[none:ESTADO_TRANSACCION:nk]' member='&quot;Incompleta&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:ID_SUBPRODUCTO:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:ID_SUBPRODUCTO:nk]' member='&quot;AUT&quot;' />
+              <groupfilter function='member' level='[none:ID_SUBPRODUCTO:nk]' member='&quot;TAR&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:LISTA_PRIVACIDAD:nk]'>
+            <groupfilter function='member' level='[none:LISTA_PRIVACIDAD:nk]' member='%null%' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[yr:FECHA_INGRESO:ok]'>
+            <groupfilter function='member' level='[yr:FECHA_INGRESO:ok]' member='2026' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[yr:FECHA_INGRESO:ok]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[mn:FECHA_INGRESO:ok]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[dy:FECHA_INGRESO:ok]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:ESTADO_TRANSACCION:nk]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475733786628:nk]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475734315014:nk]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475738202119:nk]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:Calculation_6187101475743080458:nk]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:LISTA_PRIVACIDAD:nk]</column>
+            <column>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:ID_SUBPRODUCTO:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[cnt:SUBSCRIBER_ID:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows total='true'>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:ESTADO_TRANSACCION:nk]</rows>
+        <cols total='true'>([federated.13qdvt71jo6zb01gyxffq1eb5tn7].[yr:FECHA_INGRESO:ok] / [federated.13qdvt71jo6zb01gyxffq1eb5tn7].[mn:FECHA_INGRESO:ok])</cols>
+      </table>
+      <simple-id uuid='{11175CC2-9330-4F4B-B409-2D46D234D957}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.5' source-height='44'>
+    <window class='worksheet' name='PRINCIPAL'>
+      <cards>
+        <edge name='left'>
+          <strip size='240'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='48'>
+            <card type='columns' />
+          </strip>
+          <strip size='48'>
+            <card type='rows' />
+          </strip>
+          <strip size='44'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{D0186D8D-ACB8-4E6B-84A4-F701C64AE3A7}' />
+    </window>
+    <window class='worksheet' name='CORREGIDO'>
+      <cards>
+        <edge name='left'>
+          <strip size='240'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='118'>
+            <card type='columns' />
+          </strip>
+          <strip size='126'>
+            <card type='rows' />
+          </strip>
+          <strip size='44'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F03A2D7F-A1A8-45CA-9F6E-EE2397D36FBF}' />
+    </window>
+    <window class='worksheet' name='RENUNCIA'>
+      <cards>
+        <edge name='left'>
+          <strip size='240'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='118'>
+            <card type='columns' />
+          </strip>
+          <strip size='126'>
+            <card type='rows' />
+          </strip>
+          <strip size='44'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{0721A6EF-D0FB-4FAF-931F-B72AAC8A5D24}' />
+    </window>
+    <window class='worksheet' maximized='true' name='DESCARGAR'>
+      <cards>
+        <edge name='left'>
+          <strip size='240'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='82'>
+            <card type='columns' />
+          </strip>
+          <strip size='88'>
+            <card type='rows' />
+          </strip>
+          <strip size='44'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <tuple-selection>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[yr:FECHA_INGRESO:ok]</field>
+                    <field>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[mn:FECHA_INGRESO:ok]</field>
+                    <field>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[dy:FECHA_INGRESO:ok]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:ESTADO_TRANSACCION:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[cnt:SUBSCRIBER_ID:qk]</field>
+                  <field>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[dy:FECHA_INGRESO:ok]</field>
+                  <field>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[mn:FECHA_INGRESO:ok]</field>
+                  <field>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[none:ESTADO_TRANSACCION:nk]</field>
+                  <field>[federated.13qdvt71jo6zb01gyxffq1eb5tn7].[yr:FECHA_INGRESO:ok]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>15451</value>
+                <value>%all%</value>
+                <value>%all%</value>
+                <value>%all%</value>
+                <value>%all%</value>
+              </tuple>
+            </tuple-reference>
+          </tuple-selection>
+        </selection-collection>
+      </viewpoint>
+      <simple-id uuid='{A3474530-C8E8-44C0-9187-D7B35B803DEA}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='DESCARGAR' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
